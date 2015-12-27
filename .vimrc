@@ -73,3 +73,4 @@ source $HOME/.vim/config/pymode.vim
 source $HOME/.vim/config/pdv-standalone.vim
 source $HOME/.vim/config/chef.vim
 source $HOME/.vim/config/airline.vim
+source $HOME/.vim/config/files.vim
