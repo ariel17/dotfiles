@@ -25,3 +25,9 @@ include /usr/share/taskwarrior/dark-violets-256.theme
 #include /usr/share/taskwarrior/dark-yellow-green.theme
 #include /usr/share/taskwarrior/dark-gray-256.theme
 include /usr/share/taskwarrior/solarized-dark-256.theme
+
+# Custom configurations
+report.list.columns=id,project,priority,due,start.active,entry.age,description,depends
+report.list.labels=ID,Proj,Pri,Due,Active,Age,Description,Depends
+dateformat=Y-M-DTH:N
+dateformat.report=Y-M-DTH:N
