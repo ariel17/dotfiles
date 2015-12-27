@@ -164,6 +164,15 @@ Debian_menu["Debian_Applications"] = {
 	{ "Video", Debian_menu["Debian_Applications_Video"] },
 	{ "Viewers", Debian_menu["Debian_Applications_Viewers"] },
 }
+Debian_menu["Debian_Games_Action"] = {
+	{"Chromium B.S.U.","/usr/games/chromium-bsu","/usr/share/pixmaps/chromium-bsu.xpm"},
+	{"Gravity Wars","/usr/games/gravitywars","/usr/share/games/gravitywars/gravitywars.xpm"},
+	{"Hedgewars","/usr/games/hedgewars","/usr/share/pixmaps/hedgewars.xpm"},
+	{"Nexuiz","/usr/games/nexuiz","/usr/share/pixmaps/nexuiz.xpm"},
+	{"OpenArena","/usr/games/openarena","/usr/share/pixmaps/openarena32.xpm"},
+	{"PacMan","/usr/games/pacman","/usr/share/pixmaps/pacman.xpm"},
+	{"Ri-li","/usr/games/ri-li","/usr/share/pixmaps/ri-li.xpm"},
+}
 Debian_menu["Debian_Games_Card"] = {
 	{"Gnome Solitaire Games","/usr/games/sol","/usr/share/pixmaps/aisleriot.xpm"},
 }
@@ -175,6 +184,7 @@ Debian_menu["Debian_Games_Toys"] = {
 	{"Xlogo","xlogo"},
 }
 Debian_menu["Debian_Games"] = {
+	{ "Action", Debian_menu["Debian_Games_Action"] },
 	{ "Card", Debian_menu["Debian_Games_Card"] },
 	{ "Toys", Debian_menu["Debian_Games_Toys"] },
 }

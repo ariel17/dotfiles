@@ -50,18 +50,20 @@ editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Other applications
+browser = "sensible-browser"
+dbeaver = "/usr/share/dbeaver/dbeaver"
+firefox = "firefox"
+gvim = "gvim"
+nautilus = "nautilus --no-desktop"
 pidgin = "pidgin"
+plaidchat = "plaidchat"
+pomodoro = "java -jar /opt/tomighty-0.8.0.jar"
+scudcloud = "scudcloud"
 skype = "skype"
 spotify = "spotify"
-browser = "sensible-browser"
-firefox = "firefox"
-dbeaver = "/usr/share/dbeaver/dbeaver"
-scudcloud = "scudcloud"
-gvim = "gvim"
-vim = "gnome-terminal -x sh -c vim"
 transmission = "transmission-gtk"
-nautilus = "nautilus --no-desktop"
-pomodoro = "java -jar /opt/tomighty-0.8.0.jar"
+vim = "gnome-terminal -x sh -c vim"
+calibre = "calibre"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -271,27 +273,28 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+    awful.key({ modkey,           }, "b",     function () awful.util.spawn(browser)     end),
+    awful.key({ modkey,           }, "c",     function () awful.util.spawn(calibre)     end),
+    awful.key({ modkey,           }, "d",     function () awful.util.spawn(dbeaver)     end),
+    awful.key({ modkey,           }, "f",     function () awful.util.spawn(firefox)     end),
+    awful.key({ modkey,           }, "g",     function () awful.util.spawn(gvim)        end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
+    awful.key({ modkey,           }, "h",     function () awful.util.spawn(nautilus)    end),
+    awful.key({ modkey,           }, "k",     function () awful.util.spawn(skype)       end),
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+    awful.key({ modkey,           }, "p",     function () awful.util.spawn(pidgin)      end),
+    awful.key({ modkey,           }, "s",     function () awful.util.spawn(spotify)     end),
+    awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
+    awful.key({ modkey,           }, "t",     function () awful.util.spawn(transmission) end),
+    awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)        end),
+    awful.key({ modkey,           }, "z",     function () awful.util.spawn(plaidchat)   end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-    awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey, "Control" }, "n",     awful.client.restore),
     awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn("xtrlock")   end),
-    awful.key({ modkey,           }, "p",     function () awful.util.spawn(pidgin)      end),
-    awful.key({ modkey,           }, "k",     function () awful.util.spawn(skype)       end),
-    awful.key({ modkey,           }, "s",     function () awful.util.spawn(spotify)     end),
-    awful.key({ modkey,           }, "b",     function () awful.util.spawn(browser)     end),
-    awful.key({ modkey,           }, "f",     function () awful.util.spawn(firefox)     end),
-    awful.key({ modkey,           }, "d",     function () awful.util.spawn(dbeaver)     end),
-    awful.key({ modkey,           }, "z",     function () awful.util.spawn(scudcloud)   end),
-    awful.key({ modkey,           }, "g",     function () awful.util.spawn(gvim)        end),
-    awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)        end),
-    awful.key({ modkey,           }, "t",     function () awful.util.spawn(transmission) end),
-    awful.key({ modkey,           }, "h",     function () awful.util.spawn(nautilus)    end),
+    awful.key({ modkey, "Control" }, "n",     awful.client.restore),
+    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Screens
     awful.key({modkey,            }, "F1",    function () awful.screen.focus(1)         end),
@@ -411,6 +414,8 @@ awful.rules.rules = {
     { rule = { class = "Pidgin" },
       properties = { tag = tags[1][4] } },
     { rule = { name = "ScudCloud" },
+      properties = { tag = tags[1][4] } },
+    { rule = { name = "plaidchat" },
       properties = { tag = tags[1][4] } },
     { rule = { class = "Gvim" },
       properties = { tag = tags[1][3] } },
