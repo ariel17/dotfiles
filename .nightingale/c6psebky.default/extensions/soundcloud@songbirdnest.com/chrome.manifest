@@ -1,5 +1,0 @@
-locale soundcloud en-US jar:chrome/soundcloud.jar!/locale/en-US/
-content soundcloud jar:chrome/soundcloud.jar!/content/    contentaccessible=yes
-overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul chrome://soundcloud/content/browser-overlay.xul
-skin soundcloud classic/1.0 jar:chrome/soundcloud.jar!/skin/
-resource soundcloud jsmodules/
