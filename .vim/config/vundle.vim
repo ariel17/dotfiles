@@ -54,6 +54,12 @@ Plugin 'venantius/vim-eastwood'
 " Ansible
 Plugin 'chase/vim-ansible-yaml'
 
+" Javascript
+Plugin 'pangloss/vim-javascript'
+
+" Less
+Plugin 'groenewege/vim-less'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
