@@ -1,10 +1,10 @@
+### TaskWarrior
+
 alias t="task"
 alias tl="t list"
 alias tt="tl +TODAY"
 alias to="tl +OVERDUE"
 alias td="tl +DUE"
-
-alias publicip="wget http://ipinfo.io/ip -qO -"
 
 function func_q1 {
     if [ $# -ne 1 ]; then
@@ -14,6 +14,7 @@ function func_q1 {
         task inbox
     fi
 }
+
 function func_q2 {
     if [ $# -ne 1 ]; then
         task q2
@@ -22,6 +23,7 @@ function func_q2 {
         task inbox
     fi
 }
+
 function func_q3 {
     if [ $# -ne 1 ]; then
         task q3
@@ -30,6 +32,7 @@ function func_q3 {
         task inbox
     fi
 }
+
 function func_q4 {
     if [ $# -ne 1 ]; then
         task q4
@@ -38,7 +41,18 @@ function func_q4 {
         task inbox
     fi
 }
+
 alias q1="func_q1"
 alias q2="func_q2"
 alias q3="func_q3"
 alias q4="func_q4"
+
+
+### Misc
+
+alias publicip="wget http://ipinfo.io/ip -qO -"
+
+
+### Private Aliases
+
+source ~/.bash_private_aliases
