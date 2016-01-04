@@ -1,0 +1,44 @@
+alias t="task"
+alias tl="t list"
+alias tt="tl +TODAY"
+alias to="tl +OVERDUE"
+alias td="tl +DUE"
+
+alias publicip="wget http://ipinfo.io/ip -qO -"
+
+function func_q1 {
+    if [ $# -ne 1 ]; then
+        task q1
+    else
+        task $1 mod prio:H +urg -unu
+        task inbox
+    fi
+}
+function func_q2 {
+    if [ $# -ne 1 ]; then
+        task q2
+    else
+        task $1 mod prio:H +unu -urg 
+        task inbox
+    fi
+}
+function func_q3 {
+    if [ $# -ne 1 ]; then
+        task q3
+    else
+        task $1 mod prio:L +urg -unu  
+        task inbox
+    fi
+}
+function func_q4 {
+    if [ $# -ne 1 ]; then
+        task q4
+    else
+        task $1 mod prio:L +unu -urg 
+        task inbox
+    fi
+}
+alias q1="func_q1"
+alias q2="func_q2"
+alias q3="func_q3"
+alias q4="func_q4"
