@@ -5,6 +5,7 @@ alias tl="t list"
 alias tt="tl +TODAY"
 alias to="tl +OVERDUE"
 alias td="tl +DUE"
+alias ti="t inbox"
 
 function func_q1 {
     if [ $# -ne 1 ]; then
@@ -51,7 +52,7 @@ alias q4="func_q4"
 ### Misc
 
 alias publicip="wget http://ipinfo.io/ip -qO -"
-
+alias m="pandoc ~/development/ariel17/aprendiendo/7-habitos/mision.rst | lynx -stdin"
 
 ### Private Aliases
 
