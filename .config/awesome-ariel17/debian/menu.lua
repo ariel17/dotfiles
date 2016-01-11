@@ -23,6 +23,8 @@ Debian_menu["Debian_Applications_File_Management"] = {
 	{"Nautilus","/usr/bin/nautilus","/usr/share/pixmaps/nautilus.xpm"},
 }
 Debian_menu["Debian_Applications_Graphics"] = {
+	{"Blender","/usr/bin/blender","/usr/share/pixmaps/blender-32x32.xpm"},
+	{"Inkscape","/usr/bin/inkscape","/usr/share/pixmaps/inkscape.xpm"},
 	{"LibreOffice Draw","/usr/bin/libreoffice --draw","/usr/share/icons/hicolor/32x32/apps/libreoffice-draw.xpm"},
 	{"The GIMP","/usr/bin/gimp","/usr/share/pixmaps/gimp.xpm"},
 	{"X Window Snapshot","xwd | xwud"},
@@ -54,6 +56,7 @@ Debian_menu["Debian_Applications_Programming"] = {
 	{"BeanShell (text)", "x-terminal-emulator -e ".."/usr/bin/bsh"},
 	{"BeanShell (windowed)","/usr/bin/xbsh"},
 	{"GDB", "x-terminal-emulator -e ".."/usr/bin/gdb"},
+	{"MonoDevelop","/usr/bin/monodevelop","/usr/share/icons/hicolor/scalable/apps/monodevelop.svg"},
 	{"Python (v2.7)", "x-terminal-emulator -e ".."/usr/bin/python2.7","/usr/share/pixmaps/python2.7.xpm"},
 	{"Python (v3.4)", "x-terminal-emulator -e ".."/usr/bin/python3.4","/usr/share/pixmaps/python3.4.xpm"},
 	{"Qt4 Assistant","/usr/lib/*/qt4/bin/assistant"},
