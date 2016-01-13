@@ -64,6 +64,7 @@ spotify = "spotify"
 transmission = "transmission-gtk"
 vim = "gnome-terminal -x sh -c vim"
 calibre = "calibre"
+androidStudio = "/opt/android-studio/bin/studio.sh"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -273,6 +274,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
+    awful.key({ modkey,           }, "a",     function () awful.util.spawn(androidStudio) end),
     awful.key({ modkey,           }, "b",     function () awful.util.spawn(browser)     end),
     awful.key({ modkey,           }, "c",     function () awful.util.spawn(calibre)     end),
     awful.key({ modkey,           }, "d",     function () awful.util.spawn(dbeaver)     end),
@@ -418,6 +420,8 @@ awful.rules.rules = {
     { rule = { name = "plaidchat" },
       properties = { tag = tags[1][4] } },
     { rule = { class = "Gvim" },
+      properties = { tag = tags[1][3] } },
+    { rule = { name = "Android Studio 1.5.1" },
       properties = { tag = tags[1][3] } },
     { rule = { name = "Terminal" },
       properties = { tag = tags[1][2] } },
