@@ -56,6 +56,7 @@ Plugin 'chase/vim-ansible-yaml'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
+Plugin 'wookiehangover/jshint.vim'
 
 " Less
 Plugin 'groenewege/vim-less'
