@@ -65,6 +65,7 @@ transmission = "transmission-gtk"
 vim = "gnome-terminal -x sh -c vim"
 calibre = "calibre"
 androidStudio = "/opt/android-studio/bin/studio.sh"
+unity = "/opt/Unity/Editor/Unity"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -288,6 +289,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s",     function () awful.util.spawn(spotify)     end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey,           }, "t",     function () awful.util.spawn(transmission) end),
+    awful.key({ modkey,           }, "u",     function () awful.util.spawn(unity)      end),
     awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)        end),
     awful.key({ modkey,           }, "z",     function () awful.util.spawn(plaidchat)   end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
@@ -409,7 +411,7 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][1] } },
-    { rule = { class = "Chromium" },
+    { rule = { name = "Chromium" },
       properties = { tag = tags[1][1] } },
     { rule = { class = "Spotify" },
       properties = { tag = tags[1][7] } },
