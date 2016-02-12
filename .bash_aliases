@@ -53,6 +53,9 @@ alias q4="func_q4"
 
 alias publicip="wget http://ipinfo.io/ip -qO -"
 alias m="pandoc ~/development/ariel17/aprendiendo/7-habitos/mision.rst | lynx -stdin"
+alias r="pandoc ~/development/ariel17/aprendiendo/retrospectivas/ultima.rst | lynx -stdin"
+alias d="docker"
+alias dc="docker-compose"
 
 ### Private Aliases
 
