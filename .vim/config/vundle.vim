@@ -16,7 +16,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'desert-warm-256'
@@ -35,6 +34,10 @@ Plugin 'mikehaertl/pdv-standalone'
 Plugin 't9md/vim-chef'
 Plugin 'mattn/emmet-vim'  " zen coding
 Plugin 'stegtmeyer/find-complete'
+
+" Snipets
+Plugin 'msanders/snipmate.vim'
+Plugin 'honza/vim-snippets'
 
 " Airline
 Plugin 'bling/vim-airline'
