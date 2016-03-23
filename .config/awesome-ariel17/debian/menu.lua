@@ -24,7 +24,9 @@ Debian_menu["Debian_Applications_File_Management"] = {
 }
 Debian_menu["Debian_Applications_Graphics"] = {
 	{"Blender","/usr/bin/blender","/usr/share/pixmaps/blender-32x32.xpm"},
+	{"dotty","/usr/bin/dotty"},
 	{"Inkscape","/usr/bin/inkscape","/usr/share/pixmaps/inkscape.xpm"},
+	{"lefty","/usr/bin/lefty"},
 	{"LibreOffice Draw","/usr/bin/libreoffice --draw","/usr/share/icons/hicolor/32x32/apps/libreoffice-draw.xpm"},
 	{"The GIMP","/usr/bin/gimp","/usr/share/pixmaps/gimp.xpm"},
 	{"X Window Snapshot","xwd | xwud"},
@@ -34,6 +36,7 @@ Debian_menu["Debian_Applications_Network_Communication"] = {
 	{"Pidgin","/usr/bin/pidgin","/usr/share/pixmaps/pidgin-menu.xpm"},
 	{"Remmina","/usr/bin/remmina"},
 	{"Telnet", "x-terminal-emulator -e ".."/usr/bin/telnet"},
+	{"weechat", "x-terminal-emulator -e ".."/usr/bin/weechat","/usr/share/pixmaps/weechat.xpm"},
 	{"Xbiff","xbiff"},
 }
 Debian_menu["Debian_Applications_Network_File_Transfer"] = {
@@ -132,11 +135,14 @@ Debian_menu["Debian_Applications_System"] = {
 }
 Debian_menu["Debian_Applications_Terminal_Emulators"] = {
 	{"Gnome Terminal","/usr/bin/gnome-terminal","/usr/share/pixmaps/gnome-terminal.xpm"},
+	{"Rxvt-Unicode","urxvt","/usr/share/pixmaps/urxvt.xpm"},
+	{"Rxvt-Unicode (Black, Xft)","urxvt -fn \"xft:Mono\" -rv","/usr/share/pixmaps/urxvt.xpm"},
 	{"XTerm","xterm","/usr/share/pixmaps/xterm-color_32x32.xpm"},
 	{"XTerm (Unicode)","uxterm","/usr/share/pixmaps/xterm-color_32x32.xpm"},
 }
 Debian_menu["Debian_Applications_Text"] = {
 	{"Character map","/usr/bin/gucharmap"},
+	{"Fortune","sh -c 'while /usr/games/fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done'"},
 }
 Debian_menu["Debian_Applications_Video"] = {
 	{"Totem","/usr/bin/totem","/usr/share/pixmaps/totem.xpm"},
@@ -146,6 +152,7 @@ Debian_menu["Debian_Applications_Viewers"] = {
 	{"docker","/usr/bin/wmdocker"},
 	{"Evince","/usr/bin/evince","/usr/share/pixmaps/evince.xpm"},
 	{"Eye of GNOME","/usr/bin/eog","/usr/share/pixmaps/gnome-eog.xpm"},
+	{"GraphicsMagick","/usr/bin/gm display logo:"},
 	{"Shotwell","/usr/bin/shotwell"},
 	{"Xditview","xditview"},
 }

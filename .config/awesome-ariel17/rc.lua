@@ -66,6 +66,8 @@ vim = "gnome-terminal -x sh -c vim"
 calibre = "calibre"
 androidStudio = "/opt/android-studio/bin/studio.sh"
 unity = "/opt/Unity/Editor/Unity"
+irssi = terminal .. " -e \"bash -c 'screen irssi'\""
+weechat = terminal .. " --full-screen -e  \"bash -c 'weechat'\""
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -283,19 +285,23 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "g",     function () awful.util.spawn(gvim)        end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.util.spawn(nautilus)    end),
+    awful.key({ modkey,           }, "i",     function () awful.util.spawn(irssi)       end),
     awful.key({ modkey,           }, "k",     function () awful.util.spawn(skype)       end),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "p",     function () awful.util.spawn(pidgin)      end),
     awful.key({ modkey,           }, "s",     function () awful.util.spawn(spotify)     end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey,           }, "t",     function () awful.util.spawn(transmission) end),
-    awful.key({ modkey,           }, "u",     function () awful.util.spawn(unity)      end),
-    awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)        end),
+    awful.key({ modkey,           }, "u",     function () awful.util.spawn(weechat)     end),
+    awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)         end),
     awful.key({ modkey,           }, "z",     function () awful.util.spawn(plaidchat)   end),
+
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn("xtrlock")   end),
     awful.key({ modkey, "Control" }, "n",     awful.client.restore),
+    awful.key({ modkey, "Control" }, "u",     function () awful.util.spawn(unity)      end),
+
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
