@@ -10,3 +10,6 @@
 [submodule ".config/awesome-ariel17/pomodoro"]
 	path = .config/awesome-ariel17/pomodoro
 	url = git://github.com/nikolavp/awesome-pomodoro.git
+[submodule ".conky/Harmattan"]
+	path = .conky/Harmattan
+	url = git@github.com:zagortenay333/Harmattan.git
