@@ -68,6 +68,8 @@ androidStudio = "/opt/android-studio/bin/studio.sh"
 unity = "/opt/Unity/Editor/Unity"
 irssi = terminal .. " -e \"bash -c 'screen irssi'\""
 weechat = terminal .. " --full-screen -e  \"bash -c 'weechat'\""
+rhythmbox = "rhythmbox"
+rhythmboxclient = "rhythmbox-client"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -300,11 +302,16 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn("xtrlock")   end),
     awful.key({ modkey, "Control" }, "n",     awful.client.restore),
-    awful.key({ modkey, "Control" }, "u",     function () awful.util.spawn(unity)      end),
+    awful.key({ modkey, "Control" }, "u",     function () awful.util.spawn(unity)       end),
 
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
+    awful.key({ modkey, "Shift"   }, "n",     function () awful.util.spawn(rhythmboxclient .. " --next") end),
+    awful.key({ modkey, "Shift"   }, "o",     function () awful.util.spawn(rhythmboxclient .. " --previous") end),
+    awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn(rhythmboxclient .. " --play-pause") end),
+    awful.key({ modkey, "Shift"   }, "s",     function () awful.util.spawn(rhythmboxclient .. " --stop") end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey, "Shift"   }, "x",     function () awful.util.spawn(rhythmbox)   end),
 
     -- Screens
     awful.key({modkey,            }, "F1",    function () awful.screen.focus(1)         end),
