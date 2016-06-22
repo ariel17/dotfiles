@@ -13,6 +13,7 @@ torrents
 resume
 stats.json
 *.dat
+.config/transmission/settings.json
 
 # Metadata files not interested to track
 *netrwhist*
