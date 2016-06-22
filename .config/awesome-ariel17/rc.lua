@@ -428,6 +428,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][1] } },
     { rule = { class = "Spotify" },
       properties = { tag = tags[1][7] } },
+    { rule = { class = "Rhythmbox" },
+      properties = { tag = tags[1][7] } },
     { rule = { class = "Pidgin" },
       properties = { tag = tags[1][4] } },
     { rule = { name = "ScudCloud" },
