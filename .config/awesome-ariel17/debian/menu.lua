@@ -97,6 +97,7 @@ Debian_menu["Debian_Applications_System_Administration"] = {
 	{"Editres","editres"},
 	{"GNOME partition editor","su-to-root -X -c /usr/sbin/gparted","/usr/share/pixmaps/gparted.xpm"},
 	{"pppconfig", "x-terminal-emulator -e ".."su-to-root -p root -c /usr/sbin/pppconfig"},
+	{"TeXconfig", "x-terminal-emulator -e ".."/usr/bin/texconfig"},
 	{"Xclipboard","xclipboard"},
 	{"Xfontsel","xfontsel"},
 	{"Xkill","xkill"},
@@ -155,6 +156,7 @@ Debian_menu["Debian_Applications_Viewers"] = {
 	{"GraphicsMagick","/usr/bin/gm display logo:"},
 	{"Shotwell","/usr/bin/shotwell"},
 	{"Xditview","xditview"},
+	{"XDvi","/usr/bin/xdvi"},
 }
 Debian_menu["Debian_Applications"] = {
 	{ "Accessibility", Debian_menu["Debian_Applications_Accessibility"] },
@@ -200,6 +202,7 @@ Debian_menu["Debian_Games"] = {
 }
 Debian_menu["Debian_Help"] = {
 	{"Info", "x-terminal-emulator -e ".."info"},
+	{"TeXdoctk","/usr/bin/texdoctk"},
 	{"Xman","xman"},
 	{"yelp","/usr/bin/yelp"},
 }
