@@ -31,7 +31,7 @@ end
 -- Handle runtime errors after startup
 do
     local in_error = false
-    awesome.add_signal("debug::error", function (err)
+    awesome.connect_signal("debug::error", function (err)
         -- Make sure we don't go into an endless error loop
         if in_error then return end
         in_error = true
@@ -45,7 +45,7 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
+-- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/ariel17/.config/awesome/themes/ariel17/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
