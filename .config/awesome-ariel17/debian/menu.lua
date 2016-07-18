@@ -19,11 +19,9 @@ Debian_menu["Debian_Applications_Emulators"] = {
 Debian_menu["Debian_Applications_File_Management"] = {
 	{"Baobab","/usr/bin/baobab","/usr/share/pixmaps/baobab.xpm"},
 	{"Brasero","/usr/bin/brasero"},
-	{"File-Roller","/usr/bin/file-roller","/usr/share/pixmaps/file-roller.xpm"},
 	{"Nautilus","/usr/bin/nautilus","/usr/share/pixmaps/nautilus.xpm"},
 }
 Debian_menu["Debian_Applications_Graphics"] = {
-	{"Blender","/usr/bin/blender","/usr/share/pixmaps/blender-32x32.xpm"},
 	{"dotty","/usr/bin/dotty"},
 	{"Inkscape","/usr/bin/inkscape","/usr/share/pixmaps/inkscape.xpm"},
 	{"lefty","/usr/bin/lefty"},
@@ -35,7 +33,7 @@ Debian_menu["Debian_Applications_Network_Communication"] = {
 	{"Irssi", "x-terminal-emulator -e ".."/usr/bin/irssi"},
 	{"Pidgin","/usr/bin/pidgin","/usr/share/pixmaps/pidgin-menu.xpm"},
 	{"Remmina","/usr/bin/remmina"},
-	{"Telnet", "x-terminal-emulator -e ".."/usr/bin/telnet"},
+	{"Telnet", "x-terminal-emulator -e ".."/usr/bin/telnet.netkit"},
 	{"weechat", "x-terminal-emulator -e ".."/usr/bin/weechat","/usr/share/pixmaps/weechat.xpm"},
 	{"Xbiff","xbiff"},
 }
@@ -62,6 +60,7 @@ Debian_menu["Debian_Applications_Programming"] = {
 	{"MonoDevelop","/usr/bin/monodevelop","/usr/share/icons/hicolor/scalable/apps/monodevelop.svg"},
 	{"Python (v2.7)", "x-terminal-emulator -e ".."/usr/bin/python2.7","/usr/share/pixmaps/python2.7.xpm"},
 	{"Python (v3.4)", "x-terminal-emulator -e ".."/usr/bin/python3.4","/usr/share/pixmaps/python3.4.xpm"},
+	{"Python (v3.5)", "x-terminal-emulator -e ".."/usr/bin/python3.5","/usr/share/pixmaps/python3.5.xpm"},
 	{"Qt4 Assistant","/usr/lib/*/qt4/bin/assistant"},
 	{"Qt4 Designer","/usr/lib/*/qt4/bin/designer"},
 	{"Qt4 Linguist","/usr/lib/*/qt4/bin/linguist"},
@@ -142,12 +141,10 @@ Debian_menu["Debian_Applications_Terminal_Emulators"] = {
 	{"XTerm (Unicode)","uxterm","/usr/share/pixmaps/xterm-color_32x32.xpm"},
 }
 Debian_menu["Debian_Applications_Text"] = {
-	{"Character map","/usr/bin/gucharmap"},
 	{"Fortune","sh -c 'while /usr/games/fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done'"},
 }
 Debian_menu["Debian_Applications_Video"] = {
 	{"Totem","/usr/bin/totem","/usr/share/pixmaps/totem.xpm"},
-	{"VLC media player","/usr/bin/qvlc","/usr/share/icons/hicolor/32x32/apps/vlc.xpm"},
 }
 Debian_menu["Debian_Applications_Viewers"] = {
 	{"docker","/usr/bin/wmdocker"},
@@ -179,7 +176,6 @@ Debian_menu["Debian_Applications"] = {
 Debian_menu["Debian_Games_Action"] = {
 	{"Chromium B.S.U.","/usr/games/chromium-bsu","/usr/share/pixmaps/chromium-bsu.xpm"},
 	{"Gravity Wars","/usr/games/gravitywars","/usr/share/games/gravitywars/gravitywars.xpm"},
-	{"Hedgewars","/usr/games/hedgewars","/usr/share/pixmaps/hedgewars.xpm"},
 	{"Nexuiz","/usr/games/nexuiz","/usr/share/pixmaps/nexuiz.xpm"},
 	{"OpenArena","/usr/games/openarena","/usr/share/pixmaps/openarena32.xpm"},
 	{"PacMan","/usr/games/pacman","/usr/share/pixmaps/pacman.xpm"},
