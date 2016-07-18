@@ -1,11 +1,12 @@
 ### TaskWarrior
 
 alias t="task"
-alias tl="t list"
-alias tt="tl +TODAY"
-alias to="tl +OVERDUE"
+alias ta="tl +ACTIVE"
 alias td="tl +DUE"
 alias ti="t inbox"
+alias tl="t list"
+alias to="tl +OVERDUE"
+alias tt="tl +TODAY"
 
 function func_q1 {
     if [ $# -ne 1 ]; then
