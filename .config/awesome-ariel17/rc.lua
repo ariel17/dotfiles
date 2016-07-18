@@ -1,19 +1,23 @@
 -- Standard awesome library
-require("awful")
+local gears = require("gears")
+local awful = require("awful")
+awful.rules = require("awful.rules")
 require("awful.autofocus")
-require("awful.rules")
+-- Widget and layout library
+local wibox = require("wibox")
 -- Theme handling library
-require("beautiful")
+local beautiful = require("beautiful")
 -- Notification library
-require("naughty")
+local naughty = require("naughty")
+local menubar = require("menubar")
 
 -- Load Debian menu entries
 require("debian.menu")
 
 -- Custom widgets
-require("volume")
+--require("volume")
 require("calendar2")
-require("battery")
+--require("battery")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
