@@ -38,6 +38,7 @@ Debian_menu["Debian_Applications_Network_Communication"] = {
 	{"Xbiff","xbiff"},
 }
 Debian_menu["Debian_Applications_Network_File_Transfer"] = {
+	{"FileZilla","/usr/bin/filezilla","/usr/share/pixmaps/filezilla.xpm"},
 	{"Transmission BitTorrent Client (GTK)","/usr/bin/transmission-gtk","/usr/share/pixmaps/transmission.xpm"},
 }
 Debian_menu["Debian_Applications_Network_Web_Browsing"] = {
@@ -96,6 +97,7 @@ Debian_menu["Debian_Applications_System_Administration"] = {
 	{"Editres","editres"},
 	{"GNOME partition editor","su-to-root -X -c /usr/sbin/gparted","/usr/share/pixmaps/gparted.xpm"},
 	{"pppconfig", "x-terminal-emulator -e ".."su-to-root -p root -c /usr/sbin/pppconfig"},
+	{"stalonetray","/usr/bin/stalonetray"},
 	{"TeXconfig", "x-terminal-emulator -e ".."/usr/bin/texconfig"},
 	{"Xclipboard","xclipboard"},
 	{"Xfontsel","xfontsel"},

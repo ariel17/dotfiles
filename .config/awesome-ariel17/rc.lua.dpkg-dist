@@ -41,37 +41,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/ariel17/.config/awesome/themes/ariel17/theme.lua")
-
--- Custom widgets
-local calendar2 = require("calendar2")
+beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-
--- Other applications
-browser = "sensible-browser"
-dbeaver = "/usr/share/dbeaver/dbeaver"
-firefox = "firefox"
-gvim = "gvim"
-nautilus = "nautilus --no-desktop"
-pidgin = "pidgin"
-plaidchat = "plaidchat"
-pomodoro = "java -jar /opt/tomighty-0.8.0.jar"
-scudcloud = "scudcloud"
-skype = "skype"
-spotify = "spotify"
-transmission = "transmission-gtk"
-vim = "gnome-terminal -x sh -c vim"
-calibre = "calibre"
-androidStudio = "/opt/android-studio/bin/studio.sh"
-unity = "/opt/Unity/Editor/Unity"
-irssi = terminal .. " -e \"bash -c 'screen irssi'\""
-weechat = terminal .. " --full-screen -e  \"bash -c 'weechat'\""
-rhythmbox = "rhythmbox"
-rhythmboxclient = "rhythmbox-client"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -111,7 +86,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "⌘", "⌨", "{}", "✉", "⌬", "⚒", "♫" }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
 
@@ -124,17 +99,7 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-myscreenlayoutmenu = {
-    { "Home VGA", "/home/ariel17/.screenlayout/home-vga.sh" },
-    { "Home1", "/home/ariel17/.screenlayout/home1.sh" },
-    { "Home2", "/home/ariel17/.screenlayout/home1.sh" },
-    { "Single", "/home/ariel17/.screenlayout/single.sh" },
-    { "Work VGA", "/home/ariel17/.screenlayout/work-vga.sh" },
-    { "Work", "/home/ariel17/.screenlayout/work.sh" }
-}
-
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "screen layout", myscreenlayoutmenu },
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal }
                                   }
@@ -149,10 +114,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
---mytextclock = awful.widget.textclock({ align = "right" }, " %a %Y-%m-%d %H:%M:%S", 1)
 mytextclock = awful.widget.textclock()
-calendar2.addCalendarToWidget(mytextclock, "<span color='green'>%s</span>")
-
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -302,58 +264,18 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    awful.key({ modkey,           }, "a",     function () awful.util.spawn(androidStudio) end),
-    awful.key({ modkey,           }, "b",     function () awful.util.spawn(browser)     end),
-    awful.key({ modkey,           }, "c",     function () awful.util.spawn(calibre)     end),
-    awful.key({ modkey,           }, "d",     function () awful.util.spawn(dbeaver)     end),
-    awful.key({ modkey,           }, "f",     function () awful.util.spawn(firefox)     end),
-    awful.key({ modkey,           }, "g",     function () awful.util.spawn(gvim)        end),
-    awful.key({ modkey,           }, "h",     function () awful.util.spawn(nautilus)    end),
-    awful.key({ modkey,           }, "i",     function () awful.util.spawn(irssi)       end),
-    awful.key({ modkey,           }, "k",     function () awful.util.spawn(skype)       end),
-    awful.key({ modkey,           }, "p",     function () awful.util.spawn(pidgin)      end),
-    awful.key({ modkey,           }, "s",     function () awful.util.spawn(spotify)     end),
-    awful.key({ modkey,           }, "t",     function () awful.util.spawn(transmission) end),
-    awful.key({ modkey,           }, "u",     function () awful.util.spawn(weechat)     end),
-    awful.key({ modkey,           }, "v",     function () awful.util.spawn(vim)         end),
-    awful.key({ modkey,           }, "z",     function () awful.util.spawn(plaidchat)   end),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-    awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn("xtrlock")   end),
-    awful.key({ modkey, "Control" }, "n",     awful.client.restore),
-    awful.key({ modkey, "Control" }, "u",     function () awful.util.spawn(unity)       end),
-
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
-    awful.key({ modkey, "Shift"   }, "n",     function () awful.util.spawn(rhythmboxclient .. " --next") end),
-    awful.key({ modkey, "Shift"   }, "o",     function () awful.util.spawn(rhythmboxclient .. " --previous") end),
-    awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn(rhythmboxclient .. " --play-pause") end),
-    awful.key({ modkey, "Shift"   }, "s",     function () awful.util.spawn(rhythmboxclient .. " --stop") end),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey, "Shift"   }, "x",     function () awful.util.spawn(rhythmbox)   end),
-
-    -- Screens
-    awful.key({modkey,            }, "F1",    function () awful.screen.focus(1)         end),
-    awful.key({modkey,            }, "F2",    function () awful.screen.focus(2)         end),
-
-    -- Sound
-    --awful.key({                   }, "XF86AudioRaiseVolume", APW.Up),
-    --awful.key({                   }, "XF86AudioLowerVolume", APW.Down),
-    --awful.key({                   }, "XF86AudioMute",        APW.ToggleMute),
-
     -- Prompt
-    awful.key({ modkey            }, "r",                    function () mypromptbox[mouse.screen]:run()              end),
+    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-    awful.key({ modkey            }, "x",
+    awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
-
     -- Menubar
-    awful.key({ modkey            }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end)
 )
 
 clientkeys = awful.util.table.join(
@@ -447,28 +369,10 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    { rule = { class = "Firefox" },
-      properties = { tag = tags[1][1] } },
-    { rule = { name = "Chromium" },
-      properties = { tag = tags[1][1] } },
-    { rule = { class = "Spotify" },
-      properties = { tag = tags[1][7] } },
-    { rule = { class = "Rhythmbox" },
-      properties = { tag = tags[1][7] } },
-    { rule = { class = "Pidgin" },
-      properties = { tag = tags[1][4] } },
-    { rule = { name = "ScudCloud" },
-      properties = { tag = tags[1][4] } },
-    { rule = { name = "plaidchat" },
-      properties = { tag = tags[1][4] } },
-    { rule = { class = "Gvim" },
-      properties = { tag = tags[1][3] } },
-    { rule = { name = "Android Studio 1.5.1" },
-      properties = { tag = tags[1][3] } },
-    { rule = { name = "Terminal" },
-      properties = { tag = tags[1][2] } },
-    { rule = { name = "Skype" },
-      properties = { tag = tags[1][4] } },}
+    -- Set Firefox to always map on tags number 2 of screen 1.
+    -- { rule = { class = "Firefox" },
+    --   properties = { tag = tags[1][2] } },
+}
 -- }}}
 
 -- {{{ Signals
@@ -543,13 +447,6 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
---client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
---client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
-
--- Autostart applications
-awful.util.spawn_with_shell("conky")
-awful.util.spawn_with_shell("dropbox start")
-awful.util.spawn_with_shell("nm-applet")
-awful.util.spawn_with_shell(pomodoro)

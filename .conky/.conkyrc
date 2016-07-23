@@ -24,7 +24,7 @@ gap_y 70
 minimum_size 268 620
 maximum_width 268
 own_window yes
-own_window_type normal  # other options are: override/dock/desktop/panel
+own_window_type override # other options are: normal/override/dock/desktop/panel
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 border_inner_margin 0

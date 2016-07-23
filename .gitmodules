@@ -13,3 +13,9 @@
 [submodule ".conky/Harmattan"]
 	path = .conky/Harmattan
 	url = git@github.com:zagortenay333/Harmattan.git
+[submodule ".config/awesome-ariel17/apw"]
+	path = .config/awesome-ariel17/apw
+	url = git@github.com:mokasin/apw.git
+[submodule ".config/awesome-ariel17/awesome.volume-control"]
+	path = .config/awesome-ariel17/awesome.volume-control
+	url = git@github.com:coldfix/awesome.volume-control.git

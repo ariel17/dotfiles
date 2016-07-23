@@ -1,6 +1,6 @@
 ### TaskWarrior
 
-alias t="task"
+alias t="tw"
 alias ta="tl +ACTIVE"
 alias td="tl +DUE"
 alias ti="t inbox"
