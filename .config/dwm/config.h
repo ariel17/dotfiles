@@ -19,14 +19,14 @@ static const char *tags[] = { "web", "term", "code", "im", "model", "anarchy", "
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Chromium",   NULL,       NULL,       1,            False,        -1 },
-	{ "Firefox",    NULL,       NULL,       1,            False,        -1 },
+	// { "Firefox",    NULL,       NULL,       1,            False,        -1 },
 	{ "Terminal",   NULL,       NULL,       2,            False,        -1 },
-	{ "Gvim",       NULL,       NULL,       3,            False,        -1 },
-	{ "Skype",      NULL,       NULL,       4,            False,        -1 },
-	{ "Pidgin",     NULL,       NULL,       4,            False,        -1 },
-	{ "ScudCloud",  NULL,       NULL,       7,            False,        -1 },
-	{ "Rhythmbox",  NULL,       NULL,       7,            False,        -1 },
-	{ "Spotify",    NULL,       NULL,       7,            False,        -1 },
+	// { "Gvim",       NULL,       NULL,       3,            False,        -1 },
+	// { "Skype",      NULL,       NULL,       4,            False,        -1 },
+	// { "Pidgin",     NULL,       NULL,       4,            False,        -1 },
+	// { "ScudCloud",  NULL,       NULL,       7,            False,        -1 },
+	// { "Rhythmbox",  NULL,       NULL,       7,            False,        -1 },
+	// { "Spotify",    NULL,       NULL,       7,            False,        -1 },
 };
 
 /* layout(s) */
@@ -55,28 +55,27 @@ static const Layout layouts[] = {
 /* commands */
 #define TERMINAL "x-terminal-emulator"
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]    = { TERMINAL, NULL };
-static const char *gvim[]       = { "gvim", NULL };
-static const char *scudcloud[]  = { "scudcloud", NULL };
-static const char *skype[]      = { "skype", NULL };
-static const char *chromium[]   = { "chromium-browser", NULL };
-static const char *firefox[]    = { "firefox", NULL };
-static const char *rhythmbox[]  = { "rhythmbox", NULL };
-static const char *rhythmboxnext[]  = { "rhythmbox-client", "--next" };
-static const char *rhythmboxplay[]  = { "rhythmbox-client", "--play-pause" };
-static const char *rhythmboxprevious[]  = { "rhythmbox-client", "--previous" };
-static const char *rhythmboxstop[]  = { "rhythmbox-client", "--stop" };
-static const char *weechat[]    = { TERMINAL, "-e", "sh", "-c", "weechat", NULL };
+static const char *termcmd[] = { TERMINAL, NULL };
+static const char *gvim[] = { "gvim", NULL };
+static const char *scudcloud[] = { "scudcloud", NULL };
+static const char *chromium[] = { "chromium-browser", NULL };
+static const char *firefox[] = { "firefox", NULL };
+static const char *nautilus[] = { "nautilus", "--no-desktop" };
+static const char *rhythmbox[] = { "rhythmbox", NULL };
+static const char *rhythmboxnext[] = { "rhythmbox-client", "--next" };
+static const char *rhythmboxplay[] = { "rhythmbox-client", "--play-pause" };
+static const char *rhythmboxprevious[] = { "rhythmbox-client", "--previous" };
+static const char *skype[] = { "skype", NULL };
+static const char *weechat[] = { TERMINAL, "-e", "sh", "-c", "weechat", NULL };
+static const char *alsamixer[] = { TERMINAL, "-e", "sh", "-c", "alsamixer", NULL };
 
 static Key keys[] = {
 	/* modifier           key        function        argument */
-	// { MODKEY|ShiftMask,   XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,             XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,             XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY,             XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,             XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,             XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,             XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,             XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,             XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -91,6 +90,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_c,      killclient,     {0} },
 	{ MODKEY|ShiftMask,   XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,   XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,   XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,   XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,   XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,   XK_space,  togglefloating, {0} },
 
@@ -98,13 +99,15 @@ static Key keys[] = {
 	{ MODKEY,             XK_b,      spawn,          {.v = chromium } },
 	{ MODKEY,             XK_f,      spawn,          {.v = firefox } },
 	{ MODKEY,             XK_g,      spawn,          {.v = gvim } },
+	{ MODKEY,             XK_h,      spawn,          {.v = nautilus } },
 	{ MODKEY,             XK_k,      spawn,          {.v = skype } },
+	{ MODKEY,             XK_v,      spawn,          {.v = alsamixer } },
 	{ MODKEY,             XK_w,      spawn,          {.v = weechat } },
 	{ MODKEY,             XK_x,      spawn,          {.v = rhythmbox } },
-	{ MODKEY,             XK_z,      spawn,          {.v = scudcloud } },
-	{ MODKEY|ControlMask, XK_p,      spawn,          {.v = rhythmboxplay } },
-	{ MODKEY|ControlMask, XK_o,      spawn,          {.v = rhythmboxprevious } },
-	{ MODKEY|ControlMask, XK_n,      spawn,          {.v = rhythmboxnext } },
+	{ MODKEY|ShiftMask,   XK_z,      spawn,          {.v = scudcloud } },
+	{ MODKEY|ShiftMask,   XK_n,      spawn,          {.v = rhythmboxnext } },
+	{ MODKEY|ShiftMask,   XK_o,      spawn,          {.v = rhythmboxprevious } },
+	{ MODKEY|ShiftMask,   XK_p,      spawn,          {.v = rhythmboxplay } },
 
 	TAGKEYS(              XK_1,                      0)
 	TAGKEYS(              XK_2,                      1)
