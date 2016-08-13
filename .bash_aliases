@@ -1,6 +1,6 @@
 ### TaskWarrior
 
-alias t="tw"
+alias t="task"
 alias ta="tl +ACTIVE"
 alias td="tl +DUE"
 alias ti="t inbox"
@@ -13,7 +13,7 @@ function func_q1 {
         task q1
     else
         task $1 mod prio:H +urg -unu
-        task inbox
+        # task inbox
     fi
 }
 
@@ -22,7 +22,7 @@ function func_q2 {
         task q2
     else
         task $1 mod prio:H +unu -urg 
-        task inbox
+        # task inbox
     fi
 }
 
@@ -31,7 +31,7 @@ function func_q3 {
         task q3
     else
         task $1 mod prio:L +urg -unu  
-        task inbox
+        # task inbox
     fi
 }
 
@@ -40,7 +40,7 @@ function func_q4 {
         task q4
     else
         task $1 mod prio:L +unu -urg 
-        task inbox
+        # task inbox
     fi
 }
 
