@@ -1,6 +1,0 @@
-#!/bin/bash -x
-
-SVN=/usr/bin/svn
-REPO=svn+ssh://ariel.gerardo@svn.movile.com/movile-svn/
-
-$SVN $1 $REPO$2 $3
