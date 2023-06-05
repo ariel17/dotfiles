@@ -21,5 +21,5 @@ _sgpt_zsh() {
     zle end-of-line
 }
 zle -N _sgpt_zsh
-bindkey ^l _sgpt_zsh
+bindkey ^g _sgpt_zsh
 # Shell-GPT integration ZSH v0.1
